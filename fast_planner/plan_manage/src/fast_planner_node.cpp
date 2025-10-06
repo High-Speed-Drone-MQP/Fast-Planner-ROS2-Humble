@@ -23,8 +23,7 @@
 
 
 
-#include <ros/ros.h>
-#include <visualization_msgs/Marker.h>
+#include <rclcpp/rclcpp.hpp>
 
 #include <plan_manage/kino_replan_fsm.h>
 #include <plan_manage/topo_replan_fsm.h>
@@ -37,23 +36,23 @@ backward::SignalHandling sh;
 using namespace fast_planner;
 
 int main(int argc, char** argv) {
-  ros::init(argc, argv, "fast_planner_node");
-  ros::NodeHandle nh("~");
+  rclcpp::init(argc, argv);
+  auto node = rclcpp::Node::make_shared("fast_planner_node");
 
-  int planner;
-  nh.param("planner_node/planner", planner, -1);
+  // Planner selection parameter (default -1)
+  int planner = node->declare_parameter<int>("planner_node/planner", -1);
 
   TopoReplanFSM topo_replan;
   KinoReplanFSM kino_replan;
 
   if (planner == 1) {
-    kino_replan.init(nh);
+    kino_replan.init(*node);
   } else if (planner == 2) {
-    topo_replan.init(nh);
+    topo_replan.init(*node);
   }
 
-  ros::Duration(1.0).sleep();
-  ros::spin();
-
+  rclcpp::sleep_for(std::chrono::seconds(1));
+  rclcpp::spin(node);
+  rclcpp::shutdown();
   return 0;
 }

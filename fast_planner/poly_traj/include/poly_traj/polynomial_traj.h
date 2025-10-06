@@ -175,6 +175,7 @@ public:
 
   double getMeanVel() {
     double mean_vel = length / time_sum;
+    return mean_vel;
   }
 
   double getAccCost() {
@@ -206,11 +207,12 @@ public:
       /* jerk matrix */
       Eigen::MatrixXd mat_jerk(order, order);
       mat_jerk.setZero();
-      for (double i = 3; i < order; i += 1)
-        for (double j = 3; j < order; j += 1) {
+      for (int i = 3; i < order; ++i) {
+        for (int j = 3; j < order; ++j) {
           mat_jerk(i, j) =
-              i * (i - 1) * (i - 2) * j * (j - 1) * (j - 2) * pow(ts, i + j - 5) / (i + j - 5);
+              double(i * (i - 1) * (i - 2) * j * (j - 1) * (j - 2)) * pow(ts, i + j - 5) / double(i + j - 5);
         }
+      }
 
       jerk += (cxv.transpose() * mat_jerk * cxv)(0, 0);
       jerk += (cyv.transpose() * mat_jerk * cyv)(0, 0);
@@ -239,7 +241,7 @@ public:
       while (eval_t < ts) {
         Eigen::VectorXd tv(order - 1);
         for (int i = 0; i < order - 1; ++i)
-          tv(i) = pow(ts, i);
+          tv(i) = pow(eval_t, i);
         Eigen::Vector3d vel;
         vel(0) = tv.dot(vx), vel(1) = tv.dot(vy), vel(2) = tv.dot(vz);
         double vn = vel.norm();
@@ -273,7 +275,7 @@ public:
       while (eval_t < ts) {
         Eigen::VectorXd tv(order - 2);
         for (int i = 0; i < order - 2; ++i)
-          tv(i) = pow(ts, i);
+          tv(i) = pow(eval_t, i);
         Eigen::Vector3d acc;
         acc(0) = tv.dot(ax), acc(1) = tv.dot(ay), acc(2) = tv.dot(az);
         double an = acc.norm();

@@ -28,6 +28,7 @@ if(TARGET Eigen3::Eigen)
 endif()
 
 install(TARGETS bspline
+  EXPORT export_bspline
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
@@ -36,5 +37,8 @@ install(TARGETS bspline
 install(DIRECTORY include/
   DESTINATION include
 )
+
+ament_export_targets(export_bspline HAS_LIBRARY_TARGET)
+ament_export_dependencies(rclcpp Eigen3 eigen3_cmake_module)
 
 ament_package()

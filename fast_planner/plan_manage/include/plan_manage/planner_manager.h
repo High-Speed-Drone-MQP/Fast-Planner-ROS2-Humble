@@ -37,7 +37,7 @@
 
 #include <plan_manage/plan_container.hpp>
 
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
 
 namespace fast_planner {
 
@@ -58,7 +58,7 @@ public:
 
   void planYaw(const Eigen::Vector3d& start_yaw);
 
-  void initPlanModules(ros::NodeHandle& nh);
+  void initPlanModules(rclcpp::Node& nh);
   void setGlobalWaypoints(vector<Eigen::Vector3d>& waypoints);
 
   bool checkTrajCollision(double& distance);
@@ -72,6 +72,7 @@ public:
 private:
   /* main planning algorithms & modules */
   SDFMap::Ptr sdf_map_;
+  rclcpp::Clock::SharedPtr clock_;
 
   unique_ptr<Astar> geo_path_finder_;
   unique_ptr<KinodynamicAstar> kino_path_finder_;

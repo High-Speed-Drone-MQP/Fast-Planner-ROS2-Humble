@@ -1,43 +1,57 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(traj_utils)
 
-set(CMAKE_CXX_STANDARD 14)
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
 
-find_package(catkin REQUIRED COMPONENTS
-  bspline
-  bspline_opt
-  path_searching
-  poly_traj
-  roscpp
-  std_msgs
-  cv_bridge
-)
-
+find_package(ament_cmake REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(visualization_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(bspline REQUIRED)
+find_package(bspline_opt REQUIRED)
+find_package(path_searching REQUIRED)
+find_package(poly_traj REQUIRED)
 find_package(PCL 1.7 REQUIRED)
 
-catkin_package(
- INCLUDE_DIRS include
- LIBRARIES traj_utils
- CATKIN_DEPENDS path_searching bspline bspline_opt poly_traj
-#  DEPENDS system_lib
+add_library(traj_utils
+  src/planning_visualization.cpp
 )
 
-include_directories( 
-    SYSTEM 
-    include 
-    ${catkin_INCLUDE_DIRS}
-    ${Eigen3_INCLUDE_DIRS} 
-    ${PCL_INCLUDE_DIRS}
+# Public includes for this target only its own include
+# Remove sibling include directories to avoid absolute source paths leaking to dependents
+set(TRAJ_UTILS_PUBLIC_INCLUDE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)
+
+target_include_directories(traj_utils PUBLIC
+  ${TRAJ_UTILS_PUBLIC_INCLUDE}
 )
 
-link_directories(${PCL_LIBRARY_DIRS})
+if(TARGET Eigen3::Eigen)
+  target_link_libraries(traj_utils Eigen3::Eigen)
+endif()
 
-set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS} -O3 -Wall")
+if(TARGET PCL::PCL)
+  target_link_libraries(traj_utils PCL::PCL)
+elseif(DEFINED PCL_LIBRARIES)
+  target_link_libraries(traj_utils ${PCL_LIBRARIES})
+endif()
 
-add_library( traj_utils
-    src/planning_visualization.cpp 
-    )
-target_link_libraries( traj_utils
-    ${catkin_LIBRARIES} 
-    )  
+ament_target_dependencies(traj_utils rclcpp visualization_msgs geometry_msgs bspline bspline_opt path_searching poly_traj)
+
+install(TARGETS traj_utils
+  EXPORT export_traj_utils
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY include/
+  DESTINATION include
+)
+
+ament_export_targets(export_traj_utils HAS_LIBRARY_TARGET)
+ament_export_dependencies(rclcpp visualization_msgs geometry_msgs bspline bspline_opt path_searching poly_traj Eigen3)
+
+ament_package()
