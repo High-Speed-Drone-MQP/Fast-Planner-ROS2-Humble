@@ -1,2 +1,0 @@
-/usr/bin/ar qc libpath_searching.a CMakeFiles/path_searching.dir/src/kinodynamic_astar.cpp.o CMakeFiles/path_searching.dir/src/astar.cpp.o CMakeFiles/path_searching.dir/src/topo_prm.cpp.o
-/usr/bin/ranlib libpath_searching.a

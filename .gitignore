@@ -1,3 +1,31 @@
-fast_planner/.vscode
+# Build and install directories
+build/
+install/
+
+# Cache and log files
+.ros/
+log/
+ros_ws/log/
+
+# Temporary files
+*.o
+*.so
+*.a
+*.lo
+*.la
+*.cmake
+CMakeCache.txt
+CMakeFiles/
+CTestTestfile.cmake
+Makefile
+cmake_install.cmake
+compile_commands.json
+
+# Editor-specific files (optional, but recommended)
 .vscode/
-.clang-format
+.idea/
+*.swp
+*~
+# Other common temporary files
+*.pyc
+__pycache__/

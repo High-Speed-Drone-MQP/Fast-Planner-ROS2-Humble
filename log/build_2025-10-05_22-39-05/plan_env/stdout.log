@@ -1,4 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target plan_env[0m
-[ 14%] [32mBuilding CXX object CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o[0m
-[ 42%] [32mBuilding CXX object CMakeFiles/plan_env.dir/src/sdf_map.cpp.o[0m
-[ 42%] [32mBuilding CXX object CMakeFiles/plan_env.dir/src/edt_environment.cpp.o[0m

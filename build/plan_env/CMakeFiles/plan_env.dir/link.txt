@@ -1,2 +1,0 @@
-/usr/bin/ar qc libplan_env.a CMakeFiles/plan_env.dir/src/sdf_map.cpp.o CMakeFiles/plan_env.dir/src/obj_predictor.cpp.o CMakeFiles/plan_env.dir/src/edt_environment.cpp.o CMakeFiles/plan_env.dir/src/raycast.cpp.o
-/usr/bin/ranlib libplan_env.a

@@ -1,5 +1,0 @@
-[ 14%] [32mBuilding CXX object CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o[0m
-[35m[1mConsolidate compiler generated dependencies of target plan_env[0m
-[ 28%] [32mBuilding CXX object CMakeFiles/plan_env.dir/src/sdf_map.cpp.o[0m
-[ 42%] [32m[1mLinking CXX static library libplan_env.a[0m
-[ 85%] Built target plan_env
