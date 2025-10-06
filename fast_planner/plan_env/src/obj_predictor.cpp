@@ -31,7 +31,7 @@ namespace fast_planner {
 
 int ObjHistory::queue_size_;
 int ObjHistory::skip_num_;
-ros::Time ObjHistory::global_start_time_;
+rclcpp::Time ObjHistory::global_start_time_;
 
 void ObjHistory::init(int id) {
   clear();
@@ -39,13 +39,14 @@ void ObjHistory::init(int id) {
   obj_idx_ = id;
 }
 
-void ObjHistory::poseCallback(const geometry_msgs::PoseStampedConstPtr& msg) {
+void ObjHistory::poseCallback(const geometry_msgs::msg::PoseStamped::ConstSharedPtr& msg) {
   ++skip_;
   if (skip_ < ObjHistory::skip_num_) return;
 
   Eigen::Vector4d pos_t;
   pos_t(0) = msg->pose.position.x, pos_t(1) = msg->pose.position.y, pos_t(2) = msg->pose.position.z;
-  pos_t(3) = (ros::Time::now() - ObjHistory::global_start_time_).toSec();
+  rclcpp::Time stamp(msg->header.stamp);
+  pos_t(3) = (stamp - ObjHistory::global_start_time_).seconds();
 
   history_.push_back(pos_t);
   // cout << "idx: " << obj_idx_ << "pos_t: " << pos_t.transpose() << endl;
@@ -58,21 +59,20 @@ void ObjHistory::poseCallback(const geometry_msgs::PoseStampedConstPtr& msg) {
 // ObjHistory::
 /* ============================== obj predictor ==============================
  */
-ObjPredictor::ObjPredictor(/* args */) {
-}
+ObjPredictor::ObjPredictor(/* args */) {}
 
-ObjPredictor::ObjPredictor(ros::NodeHandle& node) {
-  this->node_handle_ = node;
-}
+ObjPredictor::ObjPredictor(const std::shared_ptr<rclcpp::Node>& node) { this->node_ = node; }
 
-ObjPredictor::~ObjPredictor() {
-}
+ObjPredictor::~ObjPredictor() {}
 
 void ObjPredictor::init() {
   /* get param */
-  node_handle_.param("prediction/obj_num", obj_num_, 5);
-  node_handle_.param("prediction/lambda", lambda_, 1.0);
-  node_handle_.param("prediction/predict_rate", predict_rate_, 1.0);
+  node_->declare_parameter<int>("prediction/obj_num", 5);
+  node_->declare_parameter<double>("prediction/lambda", 1.0);
+  node_->declare_parameter<double>("prediction/predict_rate", 1.0);
+  node_->get_parameter("prediction/obj_num", obj_num_);
+  node_->get_parameter("prediction/lambda", lambda_);
+  node_->get_parameter("prediction/predict_rate", predict_rate_);
 
   predict_trajs_.reset(new vector<PolynomialPrediction>);
   predict_trajs_->resize(obj_num_);
@@ -80,8 +80,12 @@ void ObjPredictor::init() {
   obj_scale_.reset(new vector<Eigen::Vector3d>);
   obj_scale_->resize(obj_num_);
   scale_init_.resize(obj_num_);
-  for (int i = 0; i < obj_num_; i++)
-    scale_init_[i] = false;
+  for (int i = 0; i < obj_num_; i++) scale_init_[i] = false;
+
+  // init history parameters
+  ObjHistory::queue_size_ = 100;  // default
+  ObjHistory::skip_num_ = 1;
+  ObjHistory::global_start_time_ = node_->get_clock()->now();
 
   /* subscribe to pose */
   for (int i = 0; i < obj_num_; i++) {
@@ -90,27 +94,26 @@ void ObjPredictor::init() {
     obj_his->init(i);
     obj_histories_.push_back(obj_his);
 
-    ros::Subscriber pose_sub = node_handle_.subscribe<geometry_msgs::PoseStamped>(
-        "/dynamic/pose_" + std::to_string(i), 10, &ObjHistory::poseCallback, obj_his.get());
-
-    pose_subs_.push_back(pose_sub);
+    auto sub = node_->create_subscription<geometry_msgs::msg::PoseStamped>(
+        "/dynamic/pose_" + std::to_string(i), 10,
+        std::bind(&ObjHistory::poseCallback, obj_his.get(), std::placeholders::_1));
+    pose_subs_.push_back(sub);
   }
 
-  marker_sub_ = node_handle_.subscribe<visualization_msgs::Marker>("/dynamic/obj", 10,
-                                                                   &ObjPredictor::markerCallback, this);
+  marker_sub_ = node_->create_subscription<visualization_msgs::msg::Marker>(
+      "/dynamic/obj", 10, std::bind(&ObjPredictor::markerCallback, this, std::placeholders::_1));
 
   /* update prediction */
-  predict_timer_ =
-      node_handle_.createTimer(ros::Duration(1 / predict_rate_), &ObjPredictor::predictCallback, this);
+  using namespace std::chrono_literals;
+  auto period = std::chrono::duration<double>(1.0 / std::max(1e-3, predict_rate_));
+  predict_timer_ = node_->create_wall_timer(
+      std::chrono::duration_cast<std::chrono::milliseconds>(period),
+      std::bind(&ObjPredictor::predictCallback, this));
 }
 
-ObjPrediction ObjPredictor::getPredictionTraj() {
-  return this->predict_trajs_;
-}
+ObjPrediction ObjPredictor::getPredictionTraj() { return this->predict_trajs_; }
 
-ObjScale ObjPredictor::getObjScale() {
-  return this->obj_scale_;
-}
+ObjScale ObjPredictor::getObjScale() { return this->obj_scale_; }
 
 void ObjPredictor::predictPolyFit() {
   /* iterate all obj */
@@ -122,8 +125,7 @@ void ObjPredictor::predictPolyFit() {
     vector<Eigen::Matrix<double, 6, 1>> pm(3);
 
     A.setZero();
-    for (int i = 0; i < 3; ++i)
-      bm[i].setZero();
+    for (int i = 0; i < 3; ++i) bm[i].setZero();
 
     /* ---------- estimation error ---------- */
     list<Eigen::Vector4d> his;
@@ -134,12 +136,10 @@ void ObjPredictor::predictPolyFit() {
 
       /* A */
       temp << 1.0, ti, pow(ti, 2), pow(ti, 3), pow(ti, 4), pow(ti, 5);
-      for (int j = 0; j < 6; ++j)
-        A.row(j) += 2.0 * pow(ti, j) * temp.transpose();
+      for (int j = 0; j < 6; ++j) A.row(j) += 2.0 * pow(ti, j) * temp.transpose();
 
       /* b */
-      for (int dim = 0; dim < 3; ++dim)
-        bm[dim] += 2.0 * qi(dim) * temp;
+      for (int dim = 0; dim < 3; ++dim) bm[dim] += 2.0 * qi(dim) * temp;
     }
 
     /* ---------- acceleration regulator ---------- */
@@ -173,12 +173,12 @@ void ObjPredictor::predictPolyFit() {
   }
 }
 
-void ObjPredictor::predictCallback(const ros::TimerEvent& e) {
+void ObjPredictor::predictCallback() {
   // predictPolyFit();
   predictConstVel();
 }
 
-void ObjPredictor::markerCallback(const visualization_msgs::MarkerConstPtr& msg) {
+void ObjPredictor::markerCallback(const visualization_msgs::msg::Marker::ConstSharedPtr& msg) {
   int idx = msg->id;
   (*obj_scale_)[idx](0) = msg->scale.x;
   (*obj_scale_)[idx](1) = msg->scale.y;
@@ -192,7 +192,7 @@ void ObjPredictor::markerCallback(const visualization_msgs::MarkerConstPtr& msg)
   }
 
   if (finish_num == obj_num_) {
-    marker_sub_.shutdown();
+    marker_sub_.reset();
   }
 }
 

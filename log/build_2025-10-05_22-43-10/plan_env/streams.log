@@ -1,0 +1,15 @@
+[0.007s] Invoking command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env': /usr/bin/cmake --build /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env -- -j20 -l20
+[0.037s] [ 14%] [32mBuilding CXX object CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o[0m
+[0.037s] [35m[1mConsolidate compiler generated dependencies of target plan_env[0m
+[0.056s] [ 28%] [32mBuilding CXX object CMakeFiles/plan_env.dir/src/sdf_map.cpp.o[0m
+[0.468s] [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:32:10:[m[K [01;31m[Kfatal error: [m[Kpcl_conversions/pcl_conversions.h: No such file or directory
+[0.468s]    32 | #include [01;31m[K<pcl_conversions/pcl_conversions.h>[m[K
+[0.468s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.468s] compilation terminated.
+[0.473s] gmake[2]: *** [CMakeFiles/obj_generator.dir/build.make:76: CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o] Error 1
+[0.473s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/obj_generator.dir/all] Error 2
+[0.473s] gmake[1]: *** Waiting for unfinished jobs....
+[10.834s] [ 42%] [32m[1mLinking CXX static library libplan_env.a[0m
+[11.153s] [ 85%] Built target plan_env
+[11.154s] gmake: *** [Makefile:146: all] Error 2
+[11.156s] Invoked command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env' returned '2': /usr/bin/cmake --build /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env -- -j20 -l20

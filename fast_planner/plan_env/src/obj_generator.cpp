@@ -23,16 +23,14 @@
 
 
 
-#include "visualization_msgs/Marker.h"
-#include <ros/ros.h>
+#include <visualization_msgs/msg/marker.hpp>
+#include <rclcpp/rclcpp.hpp>
 
-#include <geometry_msgs/PoseStamped.h>
-#include <nav_msgs/Odometry.h>
+#include <geometry_msgs/msg/pose_stamped.hpp>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
-#include <pcl_conversions/pcl_conversions.h>
+#include <chrono>
 #include <random>
-#include <sensor_msgs/PointCloud2.h>
 #include <string>
 
 #include <plan_env/linear_obj_model.hpp>
@@ -41,8 +39,9 @@ using namespace std;
 int obj_num;
 double _xy_size, _h_size, _vel, _yaw_dot, _acc_r1, _acc_r2, _acc_z, _scale1, _scale2, _interval;
 
-ros::Publisher obj_pub;            // visualize marker
-vector<ros::Publisher> pose_pubs;  // obj pose (from optitrack)
+std::shared_ptr<rclcpp::Node> g_node;
+rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr obj_pub;            // visualize marker
+vector<rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr> pose_pubs;  // obj pose
 vector<LinearObjModel> obj_models;
 
 random_device rd;
@@ -58,38 +57,48 @@ uniform_real_distribution<double> rand_scale;
 uniform_real_distribution<double> rand_yaw_dot;
 uniform_real_distribution<double> rand_yaw;
 
-ros::Time time_update, time_change;
+rclcpp::Time time_update, time_change;
 
-void updateCallback(const ros::TimerEvent& e);
+void updateCallback();
 void visualizeObj(int id);
 
 int main(int argc, char** argv) {
-  ros::init(argc, argv, "dynamic_obj");
-  ros::NodeHandle node("~");
+  rclcpp::init(argc, argv);
+  g_node = rclcpp::Node::make_shared("dynamic_obj");
 
   /* ---------- initialize ---------- */
-  node.param("obj_generator/obj_num", obj_num, 10);
-  node.param("obj_generator/xy_size", _xy_size, 15.0);
-  node.param("obj_generator/h_size", _h_size, 5.0);
-  node.param("obj_generator/vel", _vel, 5.0);
-  node.param("obj_generator/yaw_dot", _yaw_dot, 5.0);
-  node.param("obj_generator/acc_r1", _acc_r1, 4.0);
-  node.param("obj_generator/acc_r2", _acc_r2, 6.0);
-  node.param("obj_generator/acc_z", _acc_z, 3.0);
-  node.param("obj_generator/scale1", _scale1, 1.5);
-  node.param("obj_generator/scale2", _scale2, 2.5);
-  node.param("obj_generator/interval", _interval, 2.5);
+  g_node->declare_parameter<int>("obj_generator/obj_num", 10);
+  g_node->declare_parameter<double>("obj_generator/xy_size", 15.0);
+  g_node->declare_parameter<double>("obj_generator/h_size", 5.0);
+  g_node->declare_parameter<double>("obj_generator/vel", 5.0);
+  g_node->declare_parameter<double>("obj_generator/yaw_dot", 5.0);
+  g_node->declare_parameter<double>("obj_generator/acc_r1", 4.0);
+  g_node->declare_parameter<double>("obj_generator/acc_r2", 6.0);
+  g_node->declare_parameter<double>("obj_generator/acc_z", 3.0);
+  g_node->declare_parameter<double>("obj_generator/scale1", 1.5);
+  g_node->declare_parameter<double>("obj_generator/scale2", 2.5);
+  g_node->declare_parameter<double>("obj_generator/interval", 2.5);
+  g_node->get_parameter("obj_generator/obj_num", obj_num);
+  g_node->get_parameter("obj_generator/xy_size", _xy_size);
+  g_node->get_parameter("obj_generator/h_size", _h_size);
+  g_node->get_parameter("obj_generator/vel", _vel);
+  g_node->get_parameter("obj_generator/yaw_dot", _yaw_dot);
+  g_node->get_parameter("obj_generator/acc_r1", _acc_r1);
+  g_node->get_parameter("obj_generator/acc_r2", _acc_r2);
+  g_node->get_parameter("obj_generator/acc_z", _acc_z);
+  g_node->get_parameter("obj_generator/scale1", _scale1);
+  g_node->get_parameter("obj_generator/scale2", _scale2);
+  g_node->get_parameter("obj_generator/interval", _interval);
 
-  obj_pub = node.advertise<visualization_msgs::Marker>("/dynamic/obj", 10);
+  obj_pub = g_node->create_publisher<visualization_msgs::msg::Marker>("/dynamic/obj", 10);
   for (int i = 0; i < obj_num; ++i) {
-    ros::Publisher pose_pub =
-        node.advertise<geometry_msgs::PoseStamped>("/dynamic/pose_" + to_string(i), 10);
+    auto pose_pub = g_node->create_publisher<geometry_msgs::msg::PoseStamped>("/dynamic/pose_" + to_string(i), 10);
     pose_pubs.push_back(pose_pub);
   }
 
-  ros::Timer update_timer = node.createTimer(ros::Duration(1 / 30.0), updateCallback);
+  auto update_timer = g_node->create_wall_timer(std::chrono::milliseconds(33), updateCallback);
   cout << "[dynamic]: initialize with " + to_string(obj_num) << " moving obj." << endl;
-  ros::Duration(1.0).sleep();
+  rclcpp::sleep_for(std::chrono::seconds(1));
 
   rand_color = uniform_real_distribution<double>(0.0, 1.0);
   rand_pos = uniform_real_distribution<double>(-_xy_size, _xy_size);
@@ -124,20 +133,20 @@ int main(int argc, char** argv) {
     obj_models.push_back(model);
   }
 
-  time_update = ros::Time::now();
-  time_change = ros::Time::now();
+  time_update = g_node->get_clock()->now();
+  time_change = g_node->get_clock()->now();
 
   /* ---------- start loop ---------- */
-  ros::spin();
+  rclcpp::spin(g_node);
 
   return 0;
 }
 
-void updateCallback(const ros::TimerEvent& e) {
-  ros::Time time_now = ros::Time::now();
+void updateCallback() {
+  rclcpp::Time time_now = g_node->get_clock()->now();
 
   /* ---------- change input ---------- */
-  double dtc = (time_now - time_change).toSec();
+  double dtc = (time_now - time_change).seconds();
   if (dtc > _interval) {
     for (int i = 0; i < obj_num; ++i) {
       /* ---------- use acc input ---------- */
@@ -162,7 +171,7 @@ void updateCallback(const ros::TimerEvent& e) {
   }
 
   /* ---------- update obj state ---------- */
-  double dt = (time_now - time_update).toSec();
+  double dt = (time_now - time_update).seconds();
   time_update = time_now;
   for (int i = 0; i < obj_num; ++i) {
     obj_models[i].update(dt);
@@ -196,11 +205,11 @@ void visualizeObj(int id) {
   qua = rot;
 
   /* ---------- rviz ---------- */
-  visualization_msgs::Marker mk;
+  visualization_msgs::msg::Marker mk;
   mk.header.frame_id = "world";
-  mk.header.stamp = ros::Time::now();
-  mk.type = visualization_msgs::Marker::CUBE;
-  mk.action = visualization_msgs::Marker::ADD;
+  mk.header.stamp = g_node->get_clock()->now();
+  mk.type = visualization_msgs::msg::Marker::CUBE;
+  mk.action = visualization_msgs::msg::Marker::ADD;
   mk.id = id;
 
   mk.scale.x = scale(0), mk.scale.y = scale(1), mk.scale.z = scale(2);
@@ -213,13 +222,13 @@ void visualizeObj(int id) {
 
   mk.pose.position.x = pos(0), mk.pose.position.y = pos(1), mk.pose.position.z = pos(2);
 
-  obj_pub.publish(mk);
+  obj_pub->publish(mk);
 
   /* ---------- pose ---------- */
-  geometry_msgs::PoseStamped pose;
+  geometry_msgs::msg::PoseStamped pose;
   pose.header.frame_id = "world";
-  pose.header.seq = id;
+  pose.header.stamp = g_node->get_clock()->now();
   pose.pose.position.x = pos(0), pose.pose.position.y = pos(1), pose.pose.position.z = pos(2);
   pose.pose.orientation.w = 1.0;
-  pose_pubs[id].publish(pose);
+  pose_pubs[id]->publish(pose);
 }

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbspline.a CMakeFiles/bspline.dir/src/non_uniform_bspline.cpp.o
+/usr/bin/ranlib libbspline.a

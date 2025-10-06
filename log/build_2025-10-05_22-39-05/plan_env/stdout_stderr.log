@@ -1,0 +1,80 @@
+[35m[1mConsolidate compiler generated dependencies of target plan_env[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/plan_env.dir/src/sdf_map.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/plan_env.dir/src/edt_environment.cpp.o[0m
+In file included from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:30[m[K:
+[01m[K/usr/include/pcl-1.12/pcl/point_cloud.h:45:10:[m[K [01;31m[Kfatal error: [m[KEigen/StdVector: No such file or directory
+   45 | #include [01;31m[K<Eigen/StdVector>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/obj_generator.dir/build.make:76: CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/obj_generator.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:[m[K In member function ‘[01m[Kvoid SDFMap::publishMap()[m[K’:
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1054:16:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2[m[K’ is not a member of ‘[01m[Ksensor_msgs[m[K’; did you mean ‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’?
+ 1054 |   sensor_msgs::[01;31m[KPointCloud2[m[K cloud_msg;
+      |                [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7[m[K,
+                 from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/include/plan_env/sdf_map.h:33[m[K,
+                 from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:26[m[K:
+[01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’ declared here
+  235 | using [01;36m[KPointCloud2[m[K =
+      |       [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1056:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kcloud_msg[m[K’ was not declared in this scope
+ 1056 |   pcl::toROSMsg(cloud, [01;31m[Kcloud_msg[m[K);
+      |                        [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:[m[K In member function ‘[01m[Kvoid SDFMap::publishMapInflate(bool)[m[K’:
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1096:16:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2[m[K’ is not a member of ‘[01m[Ksensor_msgs[m[K’; did you mean ‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’?
+ 1096 |   sensor_msgs::[01;31m[KPointCloud2[m[K cloud_msg;
+      |                [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7[m[K,
+                 from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/include/plan_env/sdf_map.h:33[m[K,
+                 from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:26[m[K:
+[01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’ declared here
+  235 | using [01;36m[KPointCloud2[m[K =
+      |       [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1098:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kcloud_msg[m[K’ was not declared in this scope
+ 1098 |   pcl::toROSMsg(cloud, [01;31m[Kcloud_msg[m[K);
+      |                        [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:[m[K In member function ‘[01m[Kvoid SDFMap::publishUnknown()[m[K’:
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1138:16:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2[m[K’ is not a member of ‘[01m[Ksensor_msgs[m[K’; did you mean ‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’?
+ 1138 |   sensor_msgs::[01;31m[KPointCloud2[m[K cloud_msg;
+      |                [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7[m[K,
+                 from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/include/plan_env/sdf_map.h:33[m[K,
+                 from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:26[m[K:
+[01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’ declared here
+  235 | using [01;36m[KPointCloud2[m[K =
+      |       [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1139:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kcloud_msg[m[K’ was not declared in this scope
+ 1139 |   pcl::toROSMsg(cloud, [01;31m[Kcloud_msg[m[K);
+      |                        [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:[m[K In member function ‘[01m[Kvoid SDFMap::publishDepth()[m[K’:
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1160:16:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2[m[K’ is not a member of ‘[01m[Ksensor_msgs[m[K’; did you mean ‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’?
+ 1160 |   sensor_msgs::[01;31m[KPointCloud2[m[K cloud_msg;
+      |                [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7[m[K,
+                 from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/include/plan_env/sdf_map.h:33[m[K,
+                 from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:26[m[K:
+[01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’ declared here
+  235 | using [01;36m[KPointCloud2[m[K =
+      |       [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1161:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kcloud_msg[m[K’ was not declared in this scope
+ 1161 |   pcl::toROSMsg(cloud, [01;31m[Kcloud_msg[m[K);
+      |                        [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:[m[K In member function ‘[01m[Kvoid SDFMap::publishESDF()[m[K’:
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1238:16:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2[m[K’ is not a member of ‘[01m[Ksensor_msgs[m[K’; did you mean ‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’?
+ 1238 |   sensor_msgs::[01;31m[KPointCloud2[m[K cloud_msg;
+      |                [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7[m[K,
+                 from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/include/plan_env/sdf_map.h:33[m[K,
+                 from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:26[m[K:
+[01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’ declared here
+  235 | using [01;36m[KPointCloud2[m[K =
+      |       [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1239:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kcloud_msg[m[K’ was not declared in this scope
+ 1239 |   pcl::toROSMsg(cloud, [01;31m[Kcloud_msg[m[K);
+      |                        [01;31m[K^~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/plan_env.dir/build.make:76: CMakeFiles/plan_env.dir/src/sdf_map.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/plan_env.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

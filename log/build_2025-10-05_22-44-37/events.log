@@ -1,0 +1,106 @@
+[0.000000] (-) TimerEvent: {}
+[0.000365] (-) JobUnselected: {'identifier': 'bspline'}
+[0.000556] (-) JobUnselected: {'identifier': 'bspline_opt'}
+[0.000566] (-) JobUnselected: {'identifier': 'cmake_utils'}
+[0.000573] (-) JobUnselected: {'identifier': 'local_sensing_node'}
+[0.000578] (-) JobUnselected: {'identifier': 'map_generator'}
+[0.000584] (-) JobUnselected: {'identifier': 'multi_map_server'}
+[0.000589] (-) JobUnselected: {'identifier': 'odom_visualization'}
+[0.000595] (-) JobUnselected: {'identifier': 'path_searching'}
+[0.000599] (-) JobUnselected: {'identifier': 'plan_manage'}
+[0.000605] (-) JobUnselected: {'identifier': 'poly_traj'}
+[0.000610] (-) JobUnselected: {'identifier': 'pose_utils'}
+[0.000615] (-) JobUnselected: {'identifier': 'quadrotor_msgs'}
+[0.000621] (-) JobUnselected: {'identifier': 'rviz_plugins'}
+[0.000626] (-) JobUnselected: {'identifier': 'so3_control'}
+[0.000631] (-) JobUnselected: {'identifier': 'so3_disturbance_generator'}
+[0.000636] (-) JobUnselected: {'identifier': 'so3_quadrotor_simulator'}
+[0.000642] (-) JobUnselected: {'identifier': 'traj_utils'}
+[0.000647] (-) JobUnselected: {'identifier': 'uav_utils'}
+[0.000652] (-) JobUnselected: {'identifier': 'waypoint_generator'}
+[0.000659] (plan_env) JobQueued: {'identifier': 'plan_env', 'dependencies': OrderedDict()}
+[0.000667] (plan_env) JobStarted: {'identifier': 'plan_env'}
+[0.007122] (plan_env) JobProgress: {'identifier': 'plan_env', 'progress': 'cmake'}
+[0.007720] (plan_env) JobProgress: {'identifier': 'plan_env', 'progress': 'build'}
+[0.007775] (plan_env) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env', '--', '-j20', '-l20'], 'cwd': '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rohan908'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/rohan908/Documents/ACP/acados/lib:/home/rohan908/Documents/ACP/acados/lib:'), ('ACADOS_SOURCE_DIR', '/home/rohan908/Documents/ACP/acados'), ('HOME', '/home/rohan908'), ('CHROME_DESKTOP', 'code.desktop'), ('OLDPWD', '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner'), ('TERM_PROGRAM_VERSION', '1.104.2'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('SYSTEMD_EXEC_PID', '1806'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'rohan908'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rohan908'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/rohan908/.local/bin:/home/rohan908/.local/bin:/home/rohan908/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/xtensa-esp-elf/bin/:/opt/xtensa-esp-elf/bin/:/opt/xtensa-esp-elf/bin/:/home/rohan908/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/opt/xtensa-esp-elf/bin/:/opt/xtensa-esp-elf/bin/:/opt/xtensa-esp-elf/bin/'), ('SESSION_MANAGER', 'local/rohan908:@/tmp/.ICE-unix/1778,unix/rohan908:/tmp/.ICE-unix/1778'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/df5a3732_0f81_4ead_a23c_00d9ec998465'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-3ad9a71e1c.sock'), ('GNOME_TERMINAL_SERVICE', ':1.103'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[0.042643] (plan_env) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding CXX object CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o\x1b[0m\n'}
+[0.043452] (plan_env) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target plan_env\x1b[0m\n'}
+[0.060870] (plan_env) StdoutLine: {'line': b'[ 85%] Built target plan_env\n'}
+[0.099922] (-) TimerEvent: {}
+[0.200193] (-) TimerEvent: {}
+[0.300518] (-) TimerEvent: {}
+[0.400831] (-) TimerEvent: {}
+[0.501158] (-) TimerEvent: {}
+[0.601467] (-) TimerEvent: {}
+[0.701761] (-) TimerEvent: {}
+[0.802068] (-) TimerEvent: {}
+[0.902416] (-) TimerEvent: {}
+[1.002716] (-) TimerEvent: {}
+[1.103014] (-) TimerEvent: {}
+[1.203329] (-) TimerEvent: {}
+[1.303639] (-) TimerEvent: {}
+[1.403955] (-) TimerEvent: {}
+[1.504268] (-) TimerEvent: {}
+[1.604619] (-) TimerEvent: {}
+[1.704917] (-) TimerEvent: {}
+[1.794601] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint main(int, char**)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.794794] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:65:3:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kg_node\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[1.794837] (plan_env) StderrLine: {'line': b'   65 |   \x1b[01;31m\x1b[Kg_node\x1b[m\x1b[K = rclcpp::Node::make_shared("dynamic_obj");\n'}
+[1.794862] (plan_env) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.794884] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:68:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.794903] (plan_env) StderrLine: {'line': b'   68 |   g_node->declare_parameter<\x1b[01;31m\x1b[Kint\x1b[m\x1b[K>("obj_generator/obj_num", 10);\n'}
+[1.794921] (plan_env) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[1.794939] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:69:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.794958] (plan_env) StderrLine: {'line': b'   69 |   g_node->declare_parameter<\x1b[01;31m\x1b[Kdouble\x1b[m\x1b[K>("obj_generator/xy_size", 15.0);\n'}
+[1.794975] (plan_env) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.794992] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:70:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.795010] (plan_env) StderrLine: {'line': b'   70 |   g_node->declare_parameter<\x1b[01;31m\x1b[Kdouble\x1b[m\x1b[K>("obj_generator/h_size", 5.0);\n'}
+[1.795026] (plan_env) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.795042] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:71:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.795059] (plan_env) StderrLine: {'line': b'   71 |   g_node->declare_parameter<\x1b[01;31m\x1b[Kdouble\x1b[m\x1b[K>("obj_generator/vel", 5.0);\n'}
+[1.795076] (plan_env) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.795092] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:72:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.795109] (plan_env) StderrLine: {'line': b'   72 |   g_node->declare_parameter<\x1b[01;31m\x1b[Kdouble\x1b[m\x1b[K>("obj_generator/yaw_dot", 5.0);\n'}
+[1.795125] (plan_env) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.795141] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:73:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.795164] (plan_env) StderrLine: {'line': b'   73 |   g_node->declare_parameter<\x1b[01;31m\x1b[Kdouble\x1b[m\x1b[K>("obj_generator/acc_r1", 4.0);\n'}
+[1.795185] (plan_env) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.795201] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:74:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.795221] (plan_env) StderrLine: {'line': b'   74 |   g_node->declare_parameter<\x1b[01;31m\x1b[Kdouble\x1b[m\x1b[K>("obj_generator/acc_r2", 6.0);\n'}
+[1.795237] (plan_env) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.795253] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:75:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.795272] (plan_env) StderrLine: {'line': b'   75 |   g_node->declare_parameter<\x1b[01;31m\x1b[Kdouble\x1b[m\x1b[K>("obj_generator/acc_z", 3.0);\n'}
+[1.795290] (plan_env) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.795307] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:76:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.795323] (plan_env) StderrLine: {'line': b'   76 |   g_node->declare_parameter<\x1b[01;31m\x1b[Kdouble\x1b[m\x1b[K>("obj_generator/scale1", 1.5);\n'}
+[1.795340] (plan_env) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.795357] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:77:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.795374] (plan_env) StderrLine: {'line': b'   77 |   g_node->declare_parameter<\x1b[01;31m\x1b[Kdouble\x1b[m\x1b[K>("obj_generator/scale2", 2.5);\n'}
+[1.795389] (plan_env) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.795405] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:78:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.795420] (plan_env) StderrLine: {'line': b'   78 |   g_node->declare_parameter<\x1b[01;31m\x1b[Kdouble\x1b[m\x1b[K>("obj_generator/interval", 2.5);\n'}
+[1.795532] (plan_env) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.795551] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:91:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[1.795569] (plan_env) StderrLine: {'line': b'   91 |   obj_pub = g_node->create_publisher<visualization_msgs::msg::Marker\x1b[01;31m\x1b[K>\x1b[m\x1b[K("/dynamic/obj", 10);\n'}
+[1.795587] (plan_env) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[1.795604] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:93:77:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[1.795621] (plan_env) StderrLine: {'line': b'   93 |     auto pose_pub = g_node->create_publisher<geometry_msgs::msg::PoseStamped\x1b[01;31m\x1b[K>\x1b[m\x1b[K("/dynamic/pose_" + to_string(i), 10);\n'}
+[1.795637] (plan_env) StderrLine: {'line': b'      |                                                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[1.798470] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid updateCallback()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.798508] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:144:27:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kg_node\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[1.798527] (plan_env) StderrLine: {'line': b'  144 |   rclcpp::Time time_now = \x1b[01;31m\x1b[Kg_node\x1b[m\x1b[K->get_clock()->now();\n'}
+[1.798545] (plan_env) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.805033] (-) TimerEvent: {}
+[1.806579] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid visualizeObj(int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.806885] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:208:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kg_node\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[1.806914] (plan_env) StderrLine: {'line': b'  208 |   mk.header.stamp = \x1b[01;31m\x1b[Kg_node\x1b[m\x1b[K->get_clock()->now();\n'}
+[1.806934] (plan_env) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.906561] (-) TimerEvent: {}
+[2.006780] (-) TimerEvent: {}
+[2.107279] (-) TimerEvent: {}
+[2.172727] (plan_env) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/obj_generator.dir/build.make:76: CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o] Error 1\n'}
+[2.172896] (plan_env) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/obj_generator.dir/all] Error 2\n'}
+[2.173221] (plan_env) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[2.174772] (plan_env) CommandEnded: {'returncode': 2}
+[2.181155] (plan_env) JobEnded: {'identifier': 'plan_env', 'rc': 2}
+[2.191530] (-) EventReactorShutdown: {}

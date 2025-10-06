@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbspline_opt.a CMakeFiles/bspline_opt.dir/src/bspline_optimizer.cpp.o
+/usr/bin/ranlib libbspline_opt.a

@@ -1,0 +1,212 @@
+[0.000000] (-) TimerEvent: {}
+[0.000223] (-) JobUnselected: {'identifier': 'bspline'}
+[0.000247] (-) JobUnselected: {'identifier': 'bspline_opt'}
+[0.000256] (-) JobUnselected: {'identifier': 'cmake_utils'}
+[0.000263] (-) JobUnselected: {'identifier': 'local_sensing_node'}
+[0.000268] (-) JobUnselected: {'identifier': 'map_generator'}
+[0.000274] (-) JobUnselected: {'identifier': 'multi_map_server'}
+[0.000279] (-) JobUnselected: {'identifier': 'odom_visualization'}
+[0.000285] (-) JobUnselected: {'identifier': 'path_searching'}
+[0.000290] (-) JobUnselected: {'identifier': 'plan_manage'}
+[0.000295] (-) JobUnselected: {'identifier': 'poly_traj'}
+[0.000300] (-) JobUnselected: {'identifier': 'pose_utils'}
+[0.000305] (-) JobUnselected: {'identifier': 'quadrotor_msgs'}
+[0.000310] (-) JobUnselected: {'identifier': 'rviz_plugins'}
+[0.000315] (-) JobUnselected: {'identifier': 'so3_control'}
+[0.000320] (-) JobUnselected: {'identifier': 'so3_disturbance_generator'}
+[0.000325] (-) JobUnselected: {'identifier': 'so3_quadrotor_simulator'}
+[0.000330] (-) JobUnselected: {'identifier': 'traj_utils'}
+[0.000335] (-) JobUnselected: {'identifier': 'uav_utils'}
+[0.000340] (-) JobUnselected: {'identifier': 'waypoint_generator'}
+[0.000348] (plan_env) JobQueued: {'identifier': 'plan_env', 'dependencies': OrderedDict()}
+[0.000598] (plan_env) JobStarted: {'identifier': 'plan_env'}
+[0.003950] (plan_env) JobProgress: {'identifier': 'plan_env', 'progress': 'cmake'}
+[0.004798] (plan_env) JobProgress: {'identifier': 'plan_env', 'progress': 'build'}
+[0.005031] (plan_env) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env', '--', '-j20', '-l20'], 'cwd': '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rohan908'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/home/rohan908/Documents/ACP/acados/lib:/home/rohan908/Documents/ACP/acados/lib:'), ('ACADOS_SOURCE_DIR', '/home/rohan908/Documents/ACP/acados'), ('HOME', '/home/rohan908'), ('CHROME_DESKTOP', 'code.desktop'), ('OLDPWD', '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner'), ('TERM_PROGRAM_VERSION', '1.104.2'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('SYSTEMD_EXEC_PID', '1806'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'rohan908'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rohan908'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/rohan908/.local/bin:/home/rohan908/.local/bin:/home/rohan908/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/xtensa-esp-elf/bin/:/opt/xtensa-esp-elf/bin/:/opt/xtensa-esp-elf/bin/:/home/rohan908/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/opt/xtensa-esp-elf/bin/:/opt/xtensa-esp-elf/bin/:/opt/xtensa-esp-elf/bin/'), ('SESSION_MANAGER', 'local/rohan908:@/tmp/.ICE-unix/1778,unix/rohan908:/tmp/.ICE-unix/1778'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/df5a3732_0f81_4ead_a23c_00d9ec998465'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-3ad9a71e1c.sock'), ('GNOME_TERMINAL_SERVICE', ':1.103'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[0.021346] (plan_env) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.084450] (plan_env) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[0.084918] (plan_env) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.096142] (plan_env) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.097017] (plan_env) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.099299] (plan_env) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.100029] (-) TimerEvent: {}
+[0.102892] (plan_env) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.108389] (plan_env) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.122176] (plan_env) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.122669] (plan_env) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.167850] (plan_env) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.186419] (plan_env) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.197209] (plan_env) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[0.200096] (-) TimerEvent: {}
+[0.203537] (plan_env) StdoutLine: {'line': b'-- Found visualization_msgs: 4.9.0 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[0.211464] (plan_env) StdoutLine: {'line': b'-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)\n'}
+[0.215139] (plan_env) StdoutLine: {'line': b'-- Found message_filters: 4.3.8 (/opt/ros/humble/share/message_filters/cmake)\n'}
+[0.216057] (plan_env) StdoutLine: {'line': b'-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)\n'}
+[0.231394] (plan_env) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[0.243631] (plan_env) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)\n'}
+[0.300197] (-) TimerEvent: {}
+[0.387738] (plan_env) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[0.391579] (plan_env) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[0.400255] (-) TimerEvent: {}
+[0.460504] (plan_env) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[0.464094] (plan_env) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[0.469090] (plan_env) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[0.500458] (-) TimerEvent: {}
+[0.530760] (plan_env) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[0.600675] (-) TimerEvent: {}
+[0.601677] (plan_env) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[0.668637] (plan_env) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at CMakeLists.txt:19 (find_package):\n'}
+[0.668773] (plan_env) StderrLine: {'line': b'  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.\n'}
+[0.668806] (plan_env) StderrLine: {'line': b'  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy\n'}
+[0.668830] (plan_env) StderrLine: {'line': b'  command to set the policy and suppress this warning.\n'}
+[0.668852] (plan_env) StderrLine: {'line': b'\n'}
+[0.668875] (plan_env) StderrLine: {'line': b'  CMake variable PCL_ROOT is set to:\n'}
+[0.668895] (plan_env) StderrLine: {'line': b'\n'}
+[0.668914] (plan_env) StderrLine: {'line': b'    /usr\n'}
+[0.668941] (plan_env) StderrLine: {'line': b'\n'}
+[0.668961] (plan_env) StderrLine: {'line': b'  For compatibility, CMake is ignoring the variable.\n'}
+[0.668981] (plan_env) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.668999] (plan_env) StderrLine: {'line': b'\x1b[0m\n'}
+[0.700782] (-) TimerEvent: {}
+[0.705891] (plan_env) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.719755] (plan_env) StdoutLine: {'line': b'-- Generating done\n'}
+[0.722811] (plan_env) StdoutLine: {'line': b'-- Build files have been written to: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env\n'}
+[0.747275] (plan_env) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target plan_env\x1b[0m\n'}
+[0.750327] (plan_env) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding CXX object CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o\x1b[0m\n'}
+[0.764419] (plan_env) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/plan_env.dir/src/sdf_map.cpp.o\x1b[0m\n'}
+[0.801025] (-) TimerEvent: {}
+[0.901491] (-) TimerEvent: {}
+[1.001775] (-) TimerEvent: {}
+[1.102088] (-) TimerEvent: {}
+[1.188490] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:32:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kpcl_conversions/pcl_conversions.h: No such file or directory\n'}
+[1.188620] (plan_env) StderrLine: {'line': b'   32 | #include \x1b[01;31m\x1b[K<pcl_conversions/pcl_conversions.h>\x1b[m\x1b[K\n'}
+[1.188647] (plan_env) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.188673] (plan_env) StderrLine: {'line': b'compilation terminated.\n'}
+[1.193959] (plan_env) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/obj_generator.dir/build.make:76: CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o] Error 1\n'}
+[1.194070] (plan_env) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/obj_generator.dir/all] Error 2\n'}
+[1.194116] (plan_env) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[1.202137] (-) TimerEvent: {}
+[1.302360] (-) TimerEvent: {}
+[1.402976] (-) TimerEvent: {}
+[1.504128] (-) TimerEvent: {}
+[1.604592] (-) TimerEvent: {}
+[1.705010] (-) TimerEvent: {}
+[1.805472] (-) TimerEvent: {}
+[1.905916] (-) TimerEvent: {}
+[2.006343] (-) TimerEvent: {}
+[2.106647] (-) TimerEvent: {}
+[2.206974] (-) TimerEvent: {}
+[2.307303] (-) TimerEvent: {}
+[2.407609] (-) TimerEvent: {}
+[2.507911] (-) TimerEvent: {}
+[2.608256] (-) TimerEvent: {}
+[2.708708] (-) TimerEvent: {}
+[2.809207] (-) TimerEvent: {}
+[2.909442] (-) TimerEvent: {}
+[3.009724] (-) TimerEvent: {}
+[3.110012] (-) TimerEvent: {}
+[3.167198] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SDFMap::publishMap()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.167324] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1054:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPointCloud2\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.167361] (plan_env) StderrLine: {'line': b' 1054 |   sensor_msgs::\x1b[01;31m\x1b[KPointCloud2\x1b[m\x1b[K cloud_msg;\n'}
+[3.167382] (plan_env) StderrLine: {'line': b'      |                \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.167401] (plan_env) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7\x1b[m\x1b[K,\n'}
+[3.167421] (plan_env) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/include/plan_env/sdf_map.h:33\x1b[m\x1b[K,\n'}
+[3.167439] (plan_env) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:26\x1b[m\x1b[K:\n'}
+[3.167456] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[3.167474] (plan_env) StderrLine: {'line': b'  235 | using \x1b[01;36m\x1b[KPointCloud2\x1b[m\x1b[K =\n'}
+[3.167490] (plan_env) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.172946] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1056:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcloud_msg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.173189] (plan_env) StderrLine: {'line': b' 1056 |   pcl::toROSMsg(cloud, \x1b[01;31m\x1b[Kcloud_msg\x1b[m\x1b[K);\n'}
+[3.173218] (plan_env) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.175043] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SDFMap::publishMapInflate(bool)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.175268] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1096:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPointCloud2\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.175297] (plan_env) StderrLine: {'line': b' 1096 |   sensor_msgs::\x1b[01;31m\x1b[KPointCloud2\x1b[m\x1b[K cloud_msg;\n'}
+[3.175317] (plan_env) StderrLine: {'line': b'      |                \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.175335] (plan_env) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7\x1b[m\x1b[K,\n'}
+[3.175352] (plan_env) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/include/plan_env/sdf_map.h:33\x1b[m\x1b[K,\n'}
+[3.175369] (plan_env) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:26\x1b[m\x1b[K:\n'}
+[3.175385] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[3.175400] (plan_env) StderrLine: {'line': b'  235 | using \x1b[01;36m\x1b[KPointCloud2\x1b[m\x1b[K =\n'}
+[3.175419] (plan_env) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.179868] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1098:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcloud_msg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.179930] (plan_env) StderrLine: {'line': b' 1098 |   pcl::toROSMsg(cloud, \x1b[01;31m\x1b[Kcloud_msg\x1b[m\x1b[K);\n'}
+[3.179957] (plan_env) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.181635] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SDFMap::publishUnknown()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.181862] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1138:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPointCloud2\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.181890] (plan_env) StderrLine: {'line': b' 1138 |   sensor_msgs::\x1b[01;31m\x1b[KPointCloud2\x1b[m\x1b[K cloud_msg;\n'}
+[3.181911] (plan_env) StderrLine: {'line': b'      |                \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.181934] (plan_env) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7\x1b[m\x1b[K,\n'}
+[3.181955] (plan_env) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/include/plan_env/sdf_map.h:33\x1b[m\x1b[K,\n'}
+[3.181973] (plan_env) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:26\x1b[m\x1b[K:\n'}
+[3.181991] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[3.182010] (plan_env) StderrLine: {'line': b'  235 | using \x1b[01;36m\x1b[KPointCloud2\x1b[m\x1b[K =\n'}
+[3.182026] (plan_env) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.186534] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1139:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcloud_msg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.186763] (plan_env) StderrLine: {'line': b' 1139 |   pcl::toROSMsg(cloud, \x1b[01;31m\x1b[Kcloud_msg\x1b[m\x1b[K);\n'}
+[3.186788] (plan_env) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.187490] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SDFMap::publishDepth()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.187520] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1160:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPointCloud2\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.187542] (plan_env) StderrLine: {'line': b' 1160 |   sensor_msgs::\x1b[01;31m\x1b[KPointCloud2\x1b[m\x1b[K cloud_msg;\n'}
+[3.187560] (plan_env) StderrLine: {'line': b'      |                \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.187578] (plan_env) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7\x1b[m\x1b[K,\n'}
+[3.187595] (plan_env) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/include/plan_env/sdf_map.h:33\x1b[m\x1b[K,\n'}
+[3.187611] (plan_env) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:26\x1b[m\x1b[K:\n'}
+[3.187627] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[3.187642] (plan_env) StderrLine: {'line': b'  235 | using \x1b[01;36m\x1b[KPointCloud2\x1b[m\x1b[K =\n'}
+[3.187658] (plan_env) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.191752] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1161:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcloud_msg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.191973] (plan_env) StderrLine: {'line': b' 1161 |   pcl::toROSMsg(cloud, \x1b[01;31m\x1b[Kcloud_msg\x1b[m\x1b[K);\n'}
+[3.192004] (plan_env) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.202127] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SDFMap::publishESDF()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.202471] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1238:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPointCloud2\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.202507] (plan_env) StderrLine: {'line': b' 1238 |   sensor_msgs::\x1b[01;31m\x1b[KPointCloud2\x1b[m\x1b[K cloud_msg;\n'}
+[3.202529] (plan_env) StderrLine: {'line': b'      |                \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.202550] (plan_env) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7\x1b[m\x1b[K,\n'}
+[3.202570] (plan_env) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/include/plan_env/sdf_map.h:33\x1b[m\x1b[K,\n'}
+[3.202589] (plan_env) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:26\x1b[m\x1b[K:\n'}
+[3.202605] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[3.202622] (plan_env) StderrLine: {'line': b'  235 | using \x1b[01;36m\x1b[KPointCloud2\x1b[m\x1b[K =\n'}
+[3.202638] (plan_env) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.207272] (plan_env) StderrLine: {'line': b'\x1b[01m\x1b[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/sdf_map.cpp:1239:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcloud_msg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.207507] (plan_env) StderrLine: {'line': b' 1239 |   pcl::toROSMsg(cloud, \x1b[01;31m\x1b[Kcloud_msg\x1b[m\x1b[K);\n'}
+[3.207533] (plan_env) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.210058] (-) TimerEvent: {}
+[3.310294] (-) TimerEvent: {}
+[3.410641] (-) TimerEvent: {}
+[3.511105] (-) TimerEvent: {}
+[3.611428] (-) TimerEvent: {}
+[3.711800] (-) TimerEvent: {}
+[3.812113] (-) TimerEvent: {}
+[3.912412] (-) TimerEvent: {}
+[4.012765] (-) TimerEvent: {}
+[4.113058] (-) TimerEvent: {}
+[4.213363] (-) TimerEvent: {}
+[4.313714] (-) TimerEvent: {}
+[4.414063] (-) TimerEvent: {}
+[4.514440] (-) TimerEvent: {}
+[4.614803] (-) TimerEvent: {}
+[4.715112] (-) TimerEvent: {}
+[4.815413] (-) TimerEvent: {}
+[4.915789] (-) TimerEvent: {}
+[5.016066] (-) TimerEvent: {}
+[5.116723] (-) TimerEvent: {}
+[5.217027] (-) TimerEvent: {}
+[5.317606] (-) TimerEvent: {}
+[5.418136] (-) TimerEvent: {}
+[5.518695] (-) TimerEvent: {}
+[5.619229] (-) TimerEvent: {}
+[5.719804] (-) TimerEvent: {}
+[5.820359] (-) TimerEvent: {}
+[5.920590] (-) TimerEvent: {}
+[6.020895] (-) TimerEvent: {}
+[6.121397] (-) TimerEvent: {}
+[6.221700] (-) TimerEvent: {}
+[6.322266] (-) TimerEvent: {}
+[6.422576] (-) TimerEvent: {}
+[6.520971] (plan_env) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/plan_env.dir/build.make:76: CMakeFiles/plan_env.dir/src/sdf_map.cpp.o] Error 1\n'}
+[6.521149] (plan_env) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/plan_env.dir/all] Error 2\n'}
+[6.521801] (plan_env) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[6.522816] (plan_env) CommandEnded: {'returncode': 2}
+[6.523142] (-) TimerEvent: {}
+[6.530143] (plan_env) JobEnded: {'identifier': 'plan_env', 'rc': 2}
+[6.540506] (-) EventReactorShutdown: {}

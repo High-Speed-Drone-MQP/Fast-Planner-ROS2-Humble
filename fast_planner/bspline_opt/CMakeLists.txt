@@ -1,46 +1,40 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(bspline_opt)
 
-set(CMAKE_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS "-std=c++11")
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall")
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
 
+find_package(ament_cmake REQUIRED)
+find_package(eigen3_cmake_module REQUIRED)
 find_package(Eigen3 REQUIRED)
-find_package(PCL 1.7 REQUIRED)
+find_package(rclcpp REQUIRED)
+# Depend on plan_env for headers and types
+find_package(plan_env REQUIRED)
 
-set(NLOPT_INCLUDE_DIR "/usr/local/include")  
-set(NLOPT_LIBRARY "/usr/local/lib/libnlopt.so")  
-
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  rospy
-  std_msgs
-  visualization_msgs
-  cv_bridge
-  plan_env
+add_library(bspline_opt
+  src/bspline_optimizer.cpp
 )
 
-catkin_package(
- INCLUDE_DIRS include
- LIBRARIES bspline_opt
- CATKIN_DEPENDS plan_env
-#  DEPENDS system_lib
+# Public includes for downstream packages
+target_include_directories(bspline_opt PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
 )
 
-include_directories( 
-    SYSTEM 
-    include 
-    ${catkin_INCLUDE_DIRS}
-    ${Eigen3_INCLUDE_DIRS} 
-    ${PCL_INCLUDE_DIRS}
-    ${NLOPT_INCLUDE_DIR}  
+ament_target_dependencies(bspline_opt rclcpp plan_env)
+if(TARGET Eigen3::Eigen)
+  target_link_libraries(bspline_opt Eigen3::Eigen)
+endif()
+
+install(TARGETS bspline_opt
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
 )
 
-add_library( bspline_opt 
-    src/bspline_optimizer.cpp 
-    )
-target_link_libraries( bspline_opt
-    ${catkin_LIBRARIES} 
-    ${NLOPT_LIBRARY}   
-    )
+install(DIRECTORY include/
+  DESTINATION include
+)
+
+ament_package()

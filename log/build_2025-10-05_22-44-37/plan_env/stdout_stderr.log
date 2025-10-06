@@ -1,0 +1,57 @@
+[ 14%] [32mBuilding CXX object CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o[0m
+[35m[1mConsolidate compiler generated dependencies of target plan_env[0m
+[ 85%] Built target plan_env
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:65:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kg_node[m[K’ was not declared in this scope
+   65 |   [01;31m[Kg_node[m[K = rclcpp::Node::make_shared("dynamic_obj");
+      |   [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:68:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+   68 |   g_node->declare_parameter<[01;31m[Kint[m[K>("obj_generator/obj_num", 10);
+      |                             [01;31m[K^~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:69:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+   69 |   g_node->declare_parameter<[01;31m[Kdouble[m[K>("obj_generator/xy_size", 15.0);
+      |                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:70:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+   70 |   g_node->declare_parameter<[01;31m[Kdouble[m[K>("obj_generator/h_size", 5.0);
+      |                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:71:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+   71 |   g_node->declare_parameter<[01;31m[Kdouble[m[K>("obj_generator/vel", 5.0);
+      |                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:72:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+   72 |   g_node->declare_parameter<[01;31m[Kdouble[m[K>("obj_generator/yaw_dot", 5.0);
+      |                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:73:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+   73 |   g_node->declare_parameter<[01;31m[Kdouble[m[K>("obj_generator/acc_r1", 4.0);
+      |                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:74:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+   74 |   g_node->declare_parameter<[01;31m[Kdouble[m[K>("obj_generator/acc_r2", 6.0);
+      |                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:75:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+   75 |   g_node->declare_parameter<[01;31m[Kdouble[m[K>("obj_generator/acc_z", 3.0);
+      |                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:76:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+   76 |   g_node->declare_parameter<[01;31m[Kdouble[m[K>("obj_generator/scale1", 1.5);
+      |                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:77:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+   77 |   g_node->declare_parameter<[01;31m[Kdouble[m[K>("obj_generator/scale2", 2.5);
+      |                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:78:29:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+   78 |   g_node->declare_parameter<[01;31m[Kdouble[m[K>("obj_generator/interval", 2.5);
+      |                             [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:91:69:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   91 |   obj_pub = g_node->create_publisher<visualization_msgs::msg::Marker[01;31m[K>[m[K("/dynamic/obj", 10);
+      |                                                                     [01;31m[K^[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:93:77:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   93 |     auto pose_pub = g_node->create_publisher<geometry_msgs::msg::PoseStamped[01;31m[K>[m[K("/dynamic/pose_" + to_string(i), 10);
+      |                                                                             [01;31m[K^[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:[m[K In function ‘[01m[Kvoid updateCallback()[m[K’:
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:144:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kg_node[m[K’ was not declared in this scope
+  144 |   rclcpp::Time time_now = [01;31m[Kg_node[m[K->get_clock()->now();
+      |                           [01;31m[K^~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:[m[K In function ‘[01m[Kvoid visualizeObj(int)[m[K’:
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/plan_env/src/obj_generator.cpp:208:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kg_node[m[K’ was not declared in this scope
+  208 |   mk.header.stamp = [01;31m[Kg_node[m[K->get_clock()->now();
+      |                     [01;31m[K^~~~~~[m[K
+gmake[2]: *** [CMakeFiles/obj_generator.dir/build.make:76: CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/obj_generator.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,82 @@
+[0.005s] Invoking command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env': /usr/bin/cmake --build /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env -- -j20 -l20
+[0.023s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.079s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.080s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[0.091s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.092s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.095s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.098s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.103s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.118s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.118s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.165s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.183s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.194s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.200s] -- Found visualization_msgs: 4.9.0 (/opt/ros/humble/share/visualization_msgs/cmake)
+[0.209s] -- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+[0.212s] -- Found message_filters: 4.3.8 (/opt/ros/humble/share/message_filters/cmake)
+[0.213s] -- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+[0.228s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.240s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[0.385s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.389s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[0.459s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.461s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.467s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[0.528s] -- Found Qhull version 8.0.2
+[0.595s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.665s] [33mCMake Warning (dev) at CMakeLists.txt:19 (find_package):
+[0.665s]   Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+[0.665s]   Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+[0.665s]   command to set the policy and suppress this warning.
+[0.666s] 
+[0.666s]   CMake variable PCL_ROOT is set to:
+[0.666s] 
+[0.666s]     /usr
+[0.666s] 
+[0.666s]   For compatibility, CMake is ignoring the variable.
+[0.666s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.666s] [0m
+[0.708s] -- Configuring done
+[0.726s] -- Generating done
+[0.728s] -- Build files have been written to: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env
+[0.751s] [35m[1mConsolidate compiler generated dependencies of target obj_generator[0m
+[0.753s] [35m[1mConsolidate compiler generated dependencies of target plan_env[0m
+[0.766s] [ 14%] [32mBuilding CXX object CMakeFiles/obj_generator.dir/src/obj_generator.cpp.o[0m
+[0.770s] [ 28%] [32mBuilding CXX object CMakeFiles/plan_env.dir/src/sdf_map.cpp.o[0m
+[0.770s] [ 42%] [32mBuilding CXX object CMakeFiles/plan_env.dir/src/obj_predictor.cpp.o[0m
+[0.771s] [ 57%] [32mBuilding CXX object CMakeFiles/plan_env.dir/src/edt_environment.cpp.o[0m
+[4.039s] [ 71%] [32m[1mLinking CXX executable obj_generator[0m
+[4.156s] [ 71%] Built target obj_generator
+[12.260s] [ 85%] [32m[1mLinking CXX static library libplan_env.a[0m
+[12.590s] [100%] Built target plan_env
+[12.597s] Invoked command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env' returned '0': /usr/bin/cmake --build /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env -- -j20 -l20
+[12.603s] Invoking command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env': /usr/bin/cmake --install /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env
+[12.606s] -- Install configuration: ""
+[12.606s] -- Installing: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/libplan_env.a
+[12.632s] -- Installing: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/plan_env/obj_generator
+[12.633s] -- Set runtime path of "/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/plan_env/obj_generator" to ""
+[12.633s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/include
+[12.633s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/include/plan_env
+[12.633s] -- Installing: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/include/plan_env/edt_environment.h
+[12.633s] -- Installing: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/include/plan_env/obj_predictor.h
+[12.634s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/include/plan_env/raycast.h
+[12.634s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/include/plan_env/sdf_map.h
+[12.634s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/include/plan_env/polynomial_traj.hpp
+[12.634s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/include/plan_env/linear_obj_model.hpp
+[12.634s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/ament_index/resource_index/package_run_dependencies/plan_env
+[12.634s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/ament_index/resource_index/parent_prefix_path/plan_env
+[12.634s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/environment/ament_prefix_path.sh
+[12.634s] -- Installing: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/environment/ament_prefix_path.dsv
+[12.634s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/environment/path.sh
+[12.634s] -- Installing: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/environment/path.dsv
+[12.634s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/local_setup.bash
+[12.634s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/local_setup.sh
+[12.634s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/local_setup.zsh
+[12.634s] -- Installing: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/local_setup.dsv
+[12.634s] -- Installing: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/package.dsv
+[12.635s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/ament_index/resource_index/packages/plan_env
+[12.635s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/cmake/plan_envConfig.cmake
+[12.635s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/cmake/plan_envConfig-version.cmake
+[12.635s] -- Up-to-date: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/package.xml
+[12.636s] Invoked command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env' returned '0': /usr/bin/cmake --install /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/plan_env

@@ -1,0 +1,8 @@
+In file included from [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/bspline_opt/src/bspline_optimizer.cpp:26[m[K:
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/bspline_opt/include/bspline_opt/bspline_optimizer.h:30:10:[m[K [01;31m[Kfatal error: [m[Kplan_env/edt_environment.h: No such file or directory
+   30 | #include [01;31m[K<plan_env/edt_environment.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/bspline_opt.dir/build.make:76: CMakeFiles/bspline_opt.dir/src/bspline_optimizer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/bspline_opt.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

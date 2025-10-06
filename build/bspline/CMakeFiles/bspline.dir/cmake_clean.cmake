@@ -1,0 +1,11 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/bspline.dir/src/non_uniform_bspline.cpp.o"
+  "CMakeFiles/bspline.dir/src/non_uniform_bspline.cpp.o.d"
+  "libbspline.a"
+  "libbspline.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/bspline.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
