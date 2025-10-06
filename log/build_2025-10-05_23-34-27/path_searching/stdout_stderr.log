@@ -1,0 +1,43 @@
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found plan_env: 0.0.0 (/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/cmake)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Found Qhull version 8.0.2
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching
+[ 25%] [32mBuilding CXX object CMakeFiles/path_searching.dir/src/kinodynamic_astar.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/path_searching.dir/src/astar.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/path_searching.dir/src/topo_prm.cpp.o[0m
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::TopologyPRM::init(rclcpp::Node&)[m[K’:
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching/src/topo_prm.cpp:36:9:[m[K [01;31m[Kerror: [m[Kassignment of function ‘[01m[Kclock_t clock()[m[K’
+   36 |   [01;31m[Kclock = clock_[m[K; // no-op to ensure member exists
+      |   [01;31m[K~~~~~~^~~~~~~~[m[K
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching/src/astar.cpp:[m[K In member function ‘[01m[Kint fast_planner::Astar::timeToIndex(double)[m[K’:
+[01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching/src/astar.cpp:329:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  329 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/path_searching.dir/build.make:104: CMakeFiles/path_searching.dir/src/topo_prm.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/path_searching.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

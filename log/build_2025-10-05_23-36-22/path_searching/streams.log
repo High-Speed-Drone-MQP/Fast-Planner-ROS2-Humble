@@ -1,0 +1,13 @@
+[0.012s] Invoking command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching': CMAKE_PREFIX_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env PKG_CONFIG_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/x86_64-linux-gnu/pkgconfig:/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/pkgconfig ROS_PACKAGE_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share /usr/bin/cmake --build /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching -- -j20 -l20
+[0.041s] [35m[1mConsolidate compiler generated dependencies of target path_searching[0m
+[0.059s] [ 25%] [32mBuilding CXX object CMakeFiles/path_searching.dir/src/astar.cpp.o[0m
+[0.059s] [ 50%] [32mBuilding CXX object CMakeFiles/path_searching.dir/src/topo_prm.cpp.o[0m
+[2.553s] [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::TopologyPRM::init(rclcpp::Node&)[m[K’:
+[2.553s] [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching/src/topo_prm.cpp:36:9:[m[K [01;31m[Kerror: [m[Kassignment of function ‘[01m[Kclock_t clock()[m[K’
+[2.553s]    36 |   [01;31m[Kclock = clock_[m[K; // no-op to ensure member exists
+[2.553s]       |   [01;31m[K~~~~~~^~~~~~~~[m[K
+[3.162s] gmake[2]: *** [CMakeFiles/path_searching.dir/build.make:104: CMakeFiles/path_searching.dir/src/topo_prm.cpp.o] Error 1
+[3.162s] gmake[2]: *** Waiting for unfinished jobs....
+[3.270s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/path_searching.dir/all] Error 2
+[3.270s] gmake: *** [Makefile:146: all] Error 2
+[3.272s] Invoked command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching' returned '2': CMAKE_PREFIX_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env PKG_CONFIG_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/x86_64-linux-gnu/pkgconfig:/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/pkgconfig ROS_PACKAGE_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share /usr/bin/cmake --build /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching -- -j20 -l20

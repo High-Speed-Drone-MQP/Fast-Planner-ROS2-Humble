@@ -1,0 +1,47 @@
+[0.006s] Invoking command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching': CMAKE_PREFIX_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env PKG_CONFIG_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/x86_64-linux-gnu/pkgconfig:/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/pkgconfig ROS_PACKAGE_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share /usr/bin/cmake /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/path_searching
+[0.017s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.190s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.228s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.228s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[0.229s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[0.246s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.248s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.251s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.255s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.261s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.277s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.278s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.325s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.337s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.357s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.380s] -- Found plan_env: 0.0.0 (/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share/plan_env/cmake)
+[0.435s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.448s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[0.592s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.594s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[0.671s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.674s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.677s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[0.741s] -- Found Qhull version 8.0.2
+[0.805s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.903s] -- Configuring done
+[0.915s] -- Generating done
+[0.918s] -- Build files have been written to: /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching
+[0.926s] Invoked command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching' returned '0': CMAKE_PREFIX_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env PKG_CONFIG_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/x86_64-linux-gnu/pkgconfig:/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/pkgconfig ROS_PACKAGE_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share /usr/bin/cmake /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/path_searching
+[0.928s] Invoking command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching': CMAKE_PREFIX_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env PKG_CONFIG_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/x86_64-linux-gnu/pkgconfig:/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/pkgconfig ROS_PACKAGE_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share /usr/bin/cmake --build /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching -- -j20 -l20
+[0.958s] [ 25%] [32mBuilding CXX object CMakeFiles/path_searching.dir/src/kinodynamic_astar.cpp.o[0m
+[0.958s] [ 50%] [32mBuilding CXX object CMakeFiles/path_searching.dir/src/astar.cpp.o[0m
+[0.960s] [ 75%] [32mBuilding CXX object CMakeFiles/path_searching.dir/src/topo_prm.cpp.o[0m
+[3.525s] [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::TopologyPRM::init(rclcpp::Node&)[m[K’:
+[3.525s] [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching/src/topo_prm.cpp:36:9:[m[K [01;31m[Kerror: [m[Kassignment of function ‘[01m[Kclock_t clock()[m[K’
+[3.525s]    36 |   [01;31m[Kclock = clock_[m[K; // no-op to ensure member exists
+[3.525s]       |   [01;31m[K~~~~~~^~~~~~~~[m[K
+[3.573s] [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching/src/astar.cpp:[m[K In member function ‘[01m[Kint fast_planner::Astar::timeToIndex(double)[m[K’:
+[3.573s] [01m[K/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/fast_planner/path_searching/src/astar.cpp:329:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[3.573s]   329 | [01;35m[K}[m[K
+[3.573s]       | [01;35m[K^[m[K
+[4.156s] gmake[2]: *** [CMakeFiles/path_searching.dir/build.make:104: CMakeFiles/path_searching.dir/src/topo_prm.cpp.o] Error 1
+[4.156s] gmake[2]: *** Waiting for unfinished jobs....
+[5.624s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/path_searching.dir/all] Error 2
+[5.624s] gmake: *** [Makefile:146: all] Error 2
+[5.626s] Invoked command in '/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching' returned '2': CMAKE_PREFIX_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env PKG_CONFIG_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/x86_64-linux-gnu/pkgconfig:/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/lib/pkgconfig ROS_PACKAGE_PATH=/home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/install/plan_env/share /usr/bin/cmake --build /home/rohan908/Documents/ACP/NMPC/src/ros2_fast_planner/Fast-Planner-ROS2-Humble/build/path_searching -- -j20 -l20

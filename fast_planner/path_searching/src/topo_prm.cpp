@@ -25,30 +25,32 @@
 
 #include <path_searching/topo_prm.h>
 #include <thread>
+#include <iostream>
 
 namespace fast_planner {
 TopologyPRM::TopologyPRM(/* args */) {}
 
 TopologyPRM::~TopologyPRM() {}
 
-void TopologyPRM::init(ros::NodeHandle& nh) {
+void TopologyPRM::init(rclcpp::Node& nh) {
   graph_.clear();
   eng_ = default_random_engine(rd_());
   rand_pos_ = uniform_real_distribution<double>(-1.0, 1.0);
+  clock_ = nh.get_clock();
 
   // init parameter
-  nh.param("topo_prm/sample_inflate_x", sample_inflate_(0), -1.0);
-  nh.param("topo_prm/sample_inflate_y", sample_inflate_(1), -1.0);
-  nh.param("topo_prm/sample_inflate_z", sample_inflate_(2), -1.0);
-  nh.param("topo_prm/clearance", clearance_, -1.0);
-  nh.param("topo_prm/short_cut_num", short_cut_num_, -1);
-  nh.param("topo_prm/reserve_num", reserve_num_, -1);
-  nh.param("topo_prm/ratio_to_short", ratio_to_short_, -1.0);
-  nh.param("topo_prm/max_sample_num", max_sample_num_, -1);
-  nh.param("topo_prm/max_sample_time", max_sample_time_, -1.0);
-  nh.param("topo_prm/max_raw_path", max_raw_path_, -1);
-  nh.param("topo_prm/max_raw_path2", max_raw_path2_, -1);
-  nh.param("topo_prm/parallel_shortcut", parallel_shortcut_, false);
+  sample_inflate_(0) = nh.declare_parameter<double>("topo_prm/sample_inflate_x", -1.0);
+  sample_inflate_(1) = nh.declare_parameter<double>("topo_prm/sample_inflate_y", -1.0);
+  sample_inflate_(2) = nh.declare_parameter<double>("topo_prm/sample_inflate_z", -1.0);
+  clearance_          = nh.declare_parameter<double>("topo_prm/clearance", -1.0);
+  short_cut_num_      = nh.declare_parameter<int>("topo_prm/short_cut_num", -1);
+  reserve_num_        = nh.declare_parameter<int>("topo_prm/reserve_num", -1);
+  ratio_to_short_     = nh.declare_parameter<double>("topo_prm/ratio_to_short", -1.0);
+  max_sample_num_     = nh.declare_parameter<int>("topo_prm/max_sample_num", -1);
+  max_sample_time_    = nh.declare_parameter<double>("topo_prm/max_sample_time", -1.0);
+  max_raw_path_       = nh.declare_parameter<int>("topo_prm/max_raw_path", -1);
+  max_raw_path2_      = nh.declare_parameter<int>("topo_prm/max_raw_path2", -1);
+  parallel_shortcut_  = nh.declare_parameter<bool>("topo_prm/parallel_shortcut", false);
   resolution_ = edt_environment_->sdf_map_->getResolution();
   offset_ = Eigen::Vector3d(0.5, 0.5, 0.5) - edt_environment_->sdf_map_->getOrigin() / resolution_;
 
@@ -62,48 +64,48 @@ void TopologyPRM::findTopoPaths(Eigen::Vector3d start, Eigen::Vector3d end,
                                 list<GraphNode::Ptr>& graph, vector<vector<Eigen::Vector3d>>& raw_paths,
                                 vector<vector<Eigen::Vector3d>>& filtered_paths,
                                 vector<vector<Eigen::Vector3d>>& select_paths) {
-  ros::Time t1, t2;
+  rclcpp::Time t1 = clock_->now();
 
   double graph_time, search_time, short_time, prune_time, select_time;
   /* ---------- create the topo graph ---------- */
-  t1 = ros::Time::now();
+  t1 = clock_->now();
 
   start_pts_ = start_pts;
   end_pts_ = end_pts;
 
   graph = createGraph(start, end);
 
-  graph_time = (ros::Time::now() - t1).toSec();
+  graph_time = (clock_->now() - t1).seconds();
 
   /* ---------- search paths in the graph ---------- */
-  t1 = ros::Time::now();
+  t1 = clock_->now();
 
   raw_paths = searchPaths();
 
-  search_time = (ros::Time::now() - t1).toSec();
+  search_time = (clock_->now() - t1).seconds();
 
   /* ---------- path shortening ---------- */
-  // for parallel, save result in short_paths_
-  t1 = ros::Time::now();
+   // for parallel, save result in short_paths_
+  t1 = clock_->now();
 
   shortcutPaths();
 
-  short_time = (ros::Time::now() - t1).toSec();
+  short_time = (clock_->now() - t1).seconds();
 
   /* ---------- prune equivalent paths ---------- */
-  t1 = ros::Time::now();
+  t1 = clock_->now();
 
   filtered_paths = pruneEquivalent(short_paths_);
 
-  prune_time = (ros::Time::now() - t1).toSec();
+  prune_time = (clock_->now() - t1).seconds();
   // cout << "prune: " << (t2 - t1).toSec() << endl;
 
   /* ---------- select N shortest paths ---------- */
-  t1 = ros::Time::now();
+  t1 = clock_->now();
 
   select_paths = selectShortPaths(filtered_paths, 1);
 
-  select_time = (ros::Time::now() - t1).toSec();
+  select_time = (clock_->now() - t1).seconds();
 
   final_paths_ = select_paths;
 
@@ -150,9 +152,9 @@ list<GraphNode::Ptr> TopologyPRM::createGraph(Eigen::Vector3d start, Eigen::Vect
   int sample_num = 0;
   double sample_time = 0.0;
   Eigen::Vector3d pt;
-  ros::Time t1, t2;
+  rclcpp::Time t1 = clock_->now();
   while (sample_time < max_sample_time_ && sample_num < max_sample_num_) {
-    t1 = ros::Time::now();
+    t1 = clock_->now();
 
     pt = getSample();
     ++sample_num;
@@ -161,7 +163,7 @@ list<GraphNode::Ptr> TopologyPRM::createGraph(Eigen::Vector3d start, Eigen::Vect
     // edt_environment_->evaluateEDTWithGrad(pt, -1.0, dist, grad);
     dist = edt_environment_->evaluateCoarseEDT(pt, -1.0);
     if (dist <= clearance_) {
-      sample_time += (ros::Time::now() - t1).toSec();
+      sample_time += (clock_->now() - t1).seconds();
       continue;
     }
 
@@ -176,7 +178,7 @@ list<GraphNode::Ptr> TopologyPRM::createGraph(Eigen::Vector3d start, Eigen::Vect
       // sortVisibGuard(visib_guards);
       bool need_connect = needConnection(visib_guards[0], visib_guards[1], pt);
       if (!need_connect) {
-        sample_time += (ros::Time::now() - t1).toSec();
+        sample_time += (clock_->now() - t1).seconds();
         continue;
       }
       // new useful connection needed, add new connector
@@ -191,7 +193,7 @@ list<GraphNode::Ptr> TopologyPRM::createGraph(Eigen::Vector3d start, Eigen::Vect
       connector->neighbors_.push_back(visib_guards[1]);
     }
 
-    sample_time += (ros::Time::now() - t1).toSec();
+    sample_time += (clock_->now() - t1).seconds();
   }
 
   /* print record */
@@ -563,7 +565,7 @@ vector<Eigen::Vector3d> TopologyPRM::discretizePath(vector<Eigen::Vector3d> path
   vector<Eigen::Vector3d> dis_path, segment;
 
   if (path.size() < 2) {
-    ROS_ERROR("what path? ");
+    std::cerr << "[TopoPRM] invalid path size < 2" << std::endl;
     return dis_path;
   }
 
